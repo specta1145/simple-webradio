@@ -395,33 +395,6 @@ WebRadio
  Hier wird die Laustärke in der Anwendung geregelt.
  </summary>
 	<remarks></remarks>
-</member><member name="M:WebRadio.LoadSettings.#ctor(System.String)">
-	<summary>
- initialisierung der Settingsdatei
- </summary>
-	<param name="iniDateiWithPath"></param>
-	<remarks></remarks>
-</member><member name="M:WebRadio.LoadSettings.LoadSetting(System.String,System.String)">
-	<summary>
- Gibt einen SchluesselWert als String zurück, der aus der EinstellungsINI den Abschnitt mit Schluessel entspricht. 
- [Abschnitt]
- Schluessel = "Dies wird zurück gegeben"
- </summary>
-	<param name="Abschnitt">[Abschnitt]</param>
-	<param name="Schluessel">Schluesselwort</param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:WebRadio.LoadSettings.LoadSetting(System.String)">
-	<summary>
- Gibt ein StringArray zurück das alle Schluessel und dessen Werte enthält. Wobei Array(Index)(0) den Schluessel darstellt und Array(Index)(1) dessen zugehörigen Wert
- </summary>
-	<param name="Abschnitt">[Abschnitt]</param>
-	<returns>Array(Index)(0) = Schluessel, Array(Index)(1) = Wert</returns>
-	<remarks></remarks>
-</member><member name="T:WebRadio.LoadSettings">
-	<summary>
-	</summary>
-	<remarks></remarks>
 </member><member name="P:WebRadio.Sender.Name">
 	<summary>
  Name des Senders
@@ -462,6 +435,33 @@ WebRadio
 	<summary>
  Repräsentiert einen Sender. Enthält shared Funktionen zum lesen und erstellen von List(of Sender)
  </summary>
+	<remarks></remarks>
+</member><member name="M:WebRadio.LoadSettings.#ctor(System.String)">
+	<summary>
+ initialisierung der Settingsdatei
+ </summary>
+	<param name="iniDateiWithPath"></param>
+	<remarks></remarks>
+</member><member name="M:WebRadio.LoadSettings.LoadSetting(System.String,System.String)">
+	<summary>
+ Gibt einen SchluesselWert als String zurück, der aus der EinstellungsINI den Abschnitt mit Schluessel entspricht. 
+ [Abschnitt]
+ Schluessel = "Dies wird zurück gegeben"
+ </summary>
+	<param name="Abschnitt">[Abschnitt]</param>
+	<param name="Schluessel">Schluesselwort</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WebRadio.LoadSettings.LoadSetting(System.String)">
+	<summary>
+ Gibt ein StringArray zurück das alle Schluessel und dessen Werte enthält. Wobei Array(Index)(0) den Schluessel darstellt und Array(Index)(1) dessen zugehörigen Wert
+ </summary>
+	<param name="Abschnitt">[Abschnitt]</param>
+	<returns>Array(Index)(0) = Schluessel, Array(Index)(1) = Wert</returns>
+	<remarks></remarks>
+</member><member name="T:WebRadio.LoadSettings">
+	<summary>
+	</summary>
 	<remarks></remarks>
 </member>
 </members>

@@ -90,6 +90,7 @@ Partial Class Form1
         Me.TSBTN_Panik = New System.Windows.Forms.ToolStripButton()
         Me.TSBTN_Maximize = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
+        Me.SFDNew = New System.Windows.Forms.SaveFileDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -496,7 +497,7 @@ Partial Class Form1
         '
         Me.CM_Notify.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WebradioAnzeigenToolStripMenuItem, Me.AbspielenWiederaufnehmenToolStripMenuItem, Me.ToolStripSeparator5, Me.MUteToolStripMenuItem, Me.UnMuteToolStripMenuItem, Me.LeiserToolStripMenuItem, Me.LauterToolStripMenuItem, Me.ToolStripSeparator3, Me.VorherigerSenderToolStripMenuItem, Me.NächsterSenderToolStripMenuItem, Me.SenderToolStripMenuItem, Me.ToolStripSeparator4, Me.BeendenToolStripMenuItem1})
         Me.CM_Notify.Name = "CM_Notify"
-        Me.CM_Notify.Size = New System.Drawing.Size(242, 424)
+        Me.CM_Notify.Size = New System.Drawing.Size(242, 402)
         '
         'WebradioAnzeigenToolStripMenuItem
         '
@@ -693,6 +694,11 @@ Partial Class Form1
         '
         Me.ToolStripContainer1.TopToolStripPanel.Controls.Add(Me.ToolStrip1)
         '
+        'SFDNew
+        '
+        Me.SFDNew.DefaultExt = "ini"
+        Me.SFDNew.Filter = "Senderliste (*.ini)|*.ini"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -802,6 +808,7 @@ Partial Class Form1
     Friend WithEvents LauterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSBTN_Maximize As System.Windows.Forms.ToolStripButton
     Friend WithEvents SenderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SFDNew As System.Windows.Forms.SaveFileDialog
 
 
 End Class
