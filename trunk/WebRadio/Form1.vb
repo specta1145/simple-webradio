@@ -679,16 +679,21 @@ Public Class Form1
 
 
     Private Sub SpeichernunterToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SpeichernunterToolStripMenuItem.Click
-        SFD.ShowDialog()
-        Dim filename As String = SFD.FileName
-        WebRadio.Sender.WriteSenderListe(_sender, filename)
+        If SFD.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Dim filename As String = SFD.FileName
+            WebRadio.Sender.WriteSenderListe(_sender, filename)
+        End If
     End Sub
 
     Private Sub NeuToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NeuToolStripMenuItem.Click
-        _sender = New List(Of Sender)
-        SenderListe = New FileInfo(SenderListe).Directory.FullName & "\NeueSenderListe.ini"
-        FillListViews()
-        GenerateCMNotifySender()
+        SFDNew.InitialDirectory = Application.StartupPath
+        If SFDNew.ShowDialog = Windows.Forms.DialogResult.OK Then
+            _sender = New List(Of Sender)
+            SenderListe = SFDNew.FileName
+            WebRadio.Sender.WriteSenderListe(_sender, SenderListe)
+            FillListViews()
+            GenerateCMNotifySender()
+        End If
     End Sub
 
 #End Region

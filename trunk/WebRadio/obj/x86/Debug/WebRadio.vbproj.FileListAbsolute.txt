@@ -10,3 +10,15 @@ C:\Users\Speedy\documents\visual studio 2010\Projects\WebRadio\WebRadio\obj\x86\
 C:\Users\Speedy\documents\visual studio 2010\Projects\WebRadio\WebRadio\obj\x86\Debug\WebRadio.xml
 C:\Users\Speedy\documents\visual studio 2010\Projects\WebRadio\WebRadio\obj\x86\Debug\WebRadio.pdb
 C:\Users\Speedy\documents\visual studio 2010\Projects\WebRadio\WebRadio\obj\x86\Debug\WebRadio.Form2.resources
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\bin\Debug\WebRadio.exe
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\bin\Debug\WebRadio.pdb
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\bin\Debug\WebRadio.xml
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.AboutBox1.resources
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.Form1.resources
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.Form2.resources
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.Resources.resources
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.SplashScreen1.resources
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.vbproj.GenerateResource.Cache
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.exe
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.xml
+C:\Users\Speedy\Documents\Visual Studio 2010\Projects\WebRadio\simple-webradio\trunk\WebRadio\obj\x86\Debug\WebRadio.pdb
