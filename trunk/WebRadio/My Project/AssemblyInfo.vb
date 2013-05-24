@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Ein kleines Tool zum verwalten von seinen Lieblingswebradios. Das Programm kann kostenlos verteilt werden. Den Quellcode kann man bei mir erhalten. RonnyWitzgall@email.de")> 
 <Assembly: AssemblyCompany("Ronny Witzgall")> 
 <Assembly: AssemblyProduct("WebRadio")> 
-<Assembly: AssemblyCopyright("Copyright ©  2013")> 
+<Assembly: AssemblyCopyright("Copyright © Ronny Witzgall, 2013")> 
 <Assembly: AssemblyTrademark("WebRadio")> 
 
 <Assembly: ComVisible(False)>
