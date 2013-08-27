@@ -463,6 +463,22 @@ WebRadio
 	<summary>
 	</summary>
 	<remarks></remarks>
+</member><member name="M:WebRadio.Model1Container.#ctor">
+	<summary>
+ Initialisiert ein neues Model1Container-Objekt mithilfe der in Abschnitt 'Model1Container' der Anwendungskonfigurationsdatei gefundenen Verbindungszeichenfolge.
+ </summary>
+</member><member name="M:WebRadio.Model1Container.#ctor(System.String)">
+	<summary>
+ Initialisiert ein neues Model1Container-Objekt.
+ </summary>
+</member><member name="M:WebRadio.Model1Container.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialisiert ein neues Model1Container-Objekt.
+ </summary>
+</member><member name="T:WebRadio.Model1Container">
+	<summary>
+ Keine Dokumentation für Metadaten verfügbar.
+ </summary>
 </member>
 </members>
 </doc>
