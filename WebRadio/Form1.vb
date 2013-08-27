@@ -252,6 +252,10 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        'Wenn Windows herunter gefahren wird, sollten wir das nicht verhindern.
+        If e.CloseReason = CloseReason.WindowsShutDown Then
+            CloseApp = True
+        End If
         If CloseApp = True Then
             'Entgültig beenden
         Else
