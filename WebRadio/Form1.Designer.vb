@@ -29,8 +29,8 @@ Partial Class Form1
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TxtBoxURL = New System.Windows.Forms.TextBox()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.TxtBoxURL = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.ListView2 = New System.Windows.Forms.ListView()
@@ -178,14 +178,6 @@ Partial Class Form1
         Me.ColumnHeader1.Text = "Radio"
         Me.ColumnHeader1.Width = 180
         '
-        'TxtBoxURL
-        '
-        Me.TxtBoxURL.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtBoxURL.Location = New System.Drawing.Point(0, 0)
-        Me.TxtBoxURL.Name = "TxtBoxURL"
-        Me.TxtBoxURL.Size = New System.Drawing.Size(533, 20)
-        Me.TxtBoxURL.TabIndex = 1
-        '
         'WebBrowser1
         '
         Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -197,6 +189,14 @@ Partial Class Form1
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.Url = New System.Uri("http://www.google.de", System.UriKind.Absolute)
         '
+        'TxtBoxURL
+        '
+        Me.TxtBoxURL.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtBoxURL.Location = New System.Drawing.Point(0, 0)
+        Me.TxtBoxURL.Name = "TxtBoxURL"
+        Me.TxtBoxURL.Size = New System.Drawing.Size(533, 20)
+        Me.TxtBoxURL.TabIndex = 1
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.SplitContainer2)
@@ -204,7 +204,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(779, 371)
+        Me.TabPage2.Size = New System.Drawing.Size(759, 351)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sender bearbeiten"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -229,8 +229,8 @@ Partial Class Form1
         Me.SplitContainer2.Panel2.Controls.Add(Me.txtBoxNameEdit)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Label3)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Label2)
-        Me.SplitContainer2.Size = New System.Drawing.Size(773, 367)
-        Me.SplitContainer2.SplitterDistance = 257
+        Me.SplitContainer2.Size = New System.Drawing.Size(760, 309)
+        Me.SplitContainer2.SplitterDistance = 252
         Me.SplitContainer2.TabIndex = 4
         '
         'ListView2
@@ -242,7 +242,7 @@ Partial Class Form1
         Me.ListView2.GridLines = True
         Me.ListView2.Location = New System.Drawing.Point(0, 0)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(257, 367)
+        Me.ListView2.Size = New System.Drawing.Size(252, 309)
         Me.ListView2.TabIndex = 8
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -304,7 +304,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBoxUrlEdit.Location = New System.Drawing.Point(50, 42)
         Me.txtBoxUrlEdit.Name = "txtBoxUrlEdit"
-        Me.txtBoxUrlEdit.Size = New System.Drawing.Size(457, 20)
+        Me.txtBoxUrlEdit.Size = New System.Drawing.Size(449, 20)
         Me.txtBoxUrlEdit.TabIndex = 12
         '
         'txtBoxNameEdit
@@ -337,7 +337,7 @@ Partial Class Form1
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Location = New System.Drawing.Point(3, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(773, 40)
+        Me.Label1.Size = New System.Drawing.Size(753, 40)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
