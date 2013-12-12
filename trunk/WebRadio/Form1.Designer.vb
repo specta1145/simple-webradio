@@ -91,6 +91,7 @@ Partial Class Form1
         Me.TSBTN_Maximize = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
         Me.SFDNew = New System.Windows.Forms.SaveFileDialog()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +111,7 @@ Partial Class Form1
         Me.ToolStrip1.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -119,10 +121,10 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 62)
+        Me.TabControl1.Location = New System.Drawing.Point(3, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(787, 397)
+        Me.TabControl1.Size = New System.Drawing.Size(767, 377)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -131,7 +133,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(779, 371)
+        Me.TabPage1.Size = New System.Drawing.Size(759, 351)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "WebRadio"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -150,10 +152,10 @@ Partial Class Form1
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TxtBoxURL)
         Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(773, 362)
-        Me.SplitContainer1.SplitterDistance = 222
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TxtBoxURL)
+        Me.SplitContainer1.Size = New System.Drawing.Size(753, 342)
+        Me.SplitContainer1.SplitterDistance = 216
         Me.SplitContainer1.TabIndex = 0
         '
         'ListView1
@@ -166,7 +168,7 @@ Partial Class Form1
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(222, 362)
+        Me.ListView1.Size = New System.Drawing.Size(216, 342)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -181,19 +183,17 @@ Partial Class Form1
         Me.TxtBoxURL.Dock = System.Windows.Forms.DockStyle.Top
         Me.TxtBoxURL.Location = New System.Drawing.Point(0, 0)
         Me.TxtBoxURL.Name = "TxtBoxURL"
-        Me.TxtBoxURL.Size = New System.Drawing.Size(547, 20)
+        Me.TxtBoxURL.Size = New System.Drawing.Size(533, 20)
         Me.TxtBoxURL.TabIndex = 1
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.WebBrowser1.Location = New System.Drawing.Point(3, 23)
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 20)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.Size = New System.Drawing.Size(541, 336)
+        Me.WebBrowser1.Size = New System.Drawing.Size(533, 322)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.Url = New System.Uri("http://www.google.de", System.UriKind.Absolute)
         '
@@ -346,7 +346,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.ExtrasToolStripMenuItem, Me.HilfeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(787, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(773, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -438,17 +438,18 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.TrackBar1)
         Me.Panel1.Controls.Add(Me.Lbl_Volume)
         Me.Panel1.Controls.Add(Me.Lbl_current)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 462)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 383)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(787, 51)
+        Me.Panel1.Size = New System.Drawing.Size(773, 51)
         Me.Panel1.TabIndex = 2
         '
         'BTN_CLOSE
         '
         Me.BTN_CLOSE.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BTN_CLOSE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(744, 11)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(730, 11)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(36, 28)
         Me.BTN_CLOSE.TabIndex = 3
@@ -458,7 +459,7 @@ Partial Class Form1
         'TrackBar1
         '
         Me.TrackBar1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TrackBar1.Location = New System.Drawing.Point(531, 3)
+        Me.TrackBar1.Location = New System.Drawing.Point(517, 3)
         Me.TrackBar1.Maximum = 25
         Me.TrackBar1.Name = "TrackBar1"
         Me.TrackBar1.Size = New System.Drawing.Size(199, 45)
@@ -470,7 +471,7 @@ Partial Class Form1
         '
         Me.Lbl_Volume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Lbl_Volume.AutoSize = True
-        Me.Lbl_Volume.Location = New System.Drawing.Point(439, 20)
+        Me.Lbl_Volume.Location = New System.Drawing.Point(425, 20)
         Me.Lbl_Volume.Name = "Lbl_Volume"
         Me.Lbl_Volume.Size = New System.Drawing.Size(86, 13)
         Me.Lbl_Volume.TabIndex = 2
@@ -682,11 +683,11 @@ Partial Class Form1
         '
         'ToolStripContainer1.ContentPanel
         '
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(787, 0)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(773, 0)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top
         Me.ToolStripContainer1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(787, 38)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(773, 38)
         Me.ToolStripContainer1.TabIndex = 4
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
@@ -699,15 +700,29 @@ Partial Class Form1
         Me.SFDNew.DefaultExt = "ini"
         Me.SFDNew.Filter = "Senderliste (*.ini)|*.ini"
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TabControl1, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 62)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(773, 434)
+        Me.TableLayoutPanel1.TabIndex = 5
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(787, 513)
+        Me.ClientSize = New System.Drawing.Size(773, 496)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -738,6 +753,7 @@ Partial Class Form1
         Me.ToolStripContainer1.TopToolStripPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -809,6 +825,7 @@ Partial Class Form1
     Friend WithEvents TSBTN_Maximize As System.Windows.Forms.ToolStripButton
     Friend WithEvents SenderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SFDNew As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 
 
 End Class
