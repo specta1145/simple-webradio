@@ -105,13 +105,6 @@ WebRadio
 	<value></value>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="P:WebRadio.Form1.WebbrowserSize">
-	<summary>
- Hier speichern wir die Größe des ursprünglichen Controls vor dem Maximieren ab.
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="M:WebRadio.Form1.Form1_Load(System.Object,System.EventArgs)">
 	<summary>
  Beim Start laden wir eine Basis Radioliste, die nutzen wir falls noch keine INI erzeugt wurde.

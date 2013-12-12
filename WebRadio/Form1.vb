@@ -151,14 +151,6 @@ Public Class Form1
     ''' <remarks></remarks>
     Friend Property WebbrowserMaximized As Boolean = False
 
-    ''' <summary>
-    ''' Hier speichern wir die Größe des ursprünglichen Controls vor dem Maximieren ab.
-    ''' </summary>
-    ''' <value></value>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Friend Property WebbrowserSize As New System.Drawing.Size
-
 #End Region
 
 #Region "Form_Events"
@@ -414,7 +406,7 @@ Public Class Form1
 
 #End Region
 
-#Region "RadioTab"
+#Region "RadioTab (Listview1)"
 
     ''' <summary>
     ''' Wenn der Sender gewechselt wird
@@ -424,11 +416,10 @@ Public Class Form1
     ''' <remarks></remarks>
     Private Sub ListView1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            'For Schleife für genau einen Eintrag. Multiselect des Listview ist deaktiviert
-            For Each it As ListViewItem In ListView1.SelectedItems
-                'Für die Suchfunktion FindRadio
-                _SearchProperty = it.Text
-            Next
+            'Multiselect des Listview ist deaktiviert
+            'Für die Suchfunktion FindRadio
+            _SearchProperty = ListView1.SelectedItems.Item(0).Text
+            GenerateCMNotifySender()
             'Sender suchen
             Dim s As Sender = _sender.Find(AddressOf FindRadio)
             WebBrowser1.Navigate(s.URL)
@@ -870,8 +861,7 @@ Public Class Form1
     Private Sub TSBTN_Maximize_Click(sender As System.Object, e As System.EventArgs) Handles TSBTN_Maximize.Click
         If WebbrowserMaximized = False Then
 
-            'Wie groß ist denn der Webbrowser?
-            WebbrowserSize = WebBrowser1.Size
+            Me.SuspendLayout()
 
             CurrentWindowState = Me.WindowState
             Me.WindowState = FormWindowState.Maximized
@@ -894,7 +884,9 @@ Public Class Form1
             'Speichern, das wir maximiert sind
             WebbrowserMaximized = True
 
+            Me.ResumeLayout(False)
         Else
+            Me.SuspendLayout()
             'Wiederherstellen der eigentlichen Größe des Fensters
             Me.WindowState = CurrentWindowState
             'Webbrowser entfernen
@@ -908,14 +900,14 @@ Public Class Form1
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
             'Das Webbrowser Control seinen alten Eigentümer zurückgeben
             Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
-            WebBrowser1.Dock = DockStyle.None
-            Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-    Or System.Windows.Forms.AnchorStyles.Left) _
-    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.WebBrowser1.Location = New System.Drawing.Point(3, 23)
-            Me.WebBrowser1.Size = WebbrowserSize
+            WebBrowser1.Dock = DockStyle.Fill
+            WebBrowser1.BringToFront()
+            TabControl1.BringToFront()
+            Panel1.BringToFront()
             'Wir sind wieder normal
             WebbrowserMaximized = False
+
+            Me.ResumeLayout(True)
         End If
     End Sub
 
