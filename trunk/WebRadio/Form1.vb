@@ -151,6 +151,10 @@ Public Class Form1
     ''' <remarks></remarks>
     Friend Property WebbrowserMaximized As Boolean = False
 
+    Private PanelTop As New Panel
+
+    Private WithEvents MyTextBox As New MyTextBox
+
 #End Region
 
 #Region "Form_Events"
@@ -162,6 +166,9 @@ Public Class Form1
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub Form1_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+
+        Me.SplitContainer1.Panel2.Controls.Add(MyTextBox)
+        MyTextBox.Dock = DockStyle.Top
 
         'Radio vorbefüllen
         _sender.Add(New Sender("http://webradio.ffh.de/", "FFH"))
@@ -390,22 +397,21 @@ Public Class Form1
 
 #End Region
 
-#Region "AboutBox"
-
-    ''' <summary>
-    ''' AboutBox
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
-    Private Sub InfoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles InfoToolStripMenuItem.Click
-        Dim t As New AboutBox1
-        t.ShowDialog()
-    End Sub
-
-#End Region
-
 #Region "RadioTab (Listview1)"
+
+    'Private Sub MyTextBox_Enter(sender As System.Object, e As System.EventArgs) Handles MyTextBox.GotFocus
+    '    'MessageBox.Show("Hat Focus")
+    '    MyTextBox.SelectAll()
+    '    'MyTextBox.SelectionStart = 0
+    '    'MyTextBox.SelectionLength = MyTextBox.Text.Length
+    'End Sub
+
+    Private Sub MyTextBox_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyTextBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            WebBrowser1.Navigate(MyTextBox.Text)
+        End If
+    End Sub
 
     ''' <summary>
     ''' Wenn der Sender gewechselt wird
@@ -453,9 +459,14 @@ Public Class Form1
     ''' <remarks></remarks>
     Private Sub WebBrowser1_DocumentCompleted(sender As System.Object, e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
         If WebBrowser1.ReadyState = WebBrowserReadyState.Complete Then
+            If WebBrowser1.DocumentText.Contains("NewErrorPageTemplate.css") Then 'Wenn der Quelltext das enthält
+                WebBrowser1.DocumentText = "<hr /><font color='black' size='12'><b>Fehler 404</b></font><hr /><br />Die Seite: " & WebBrowser1.Url.AbsoluteUri & " konnte nicht angezeigt werden" 'Den Quelltext ändern
+                MyTextBox.Text = WebBrowser1.Url.AbsoluteUri
+                Exit Sub
+            End If
             Vol.Volume = Volume
             'Uri setzen
-            TxtBoxURL.Text = WebBrowser1.Url.AbsoluteUri
+            MyTextBox.Text = WebBrowser1.Url.AbsoluteUri
             'Aktuell Label setzen
             Lbl_current.Text = "Aktuell: " & WebBrowser1.DocumentTitle
             'Fenstertitle setzen
@@ -883,6 +894,12 @@ Public Class Form1
             'Speichern, das wir maximiert sind
             WebbrowserMaximized = True
 
+            PanelTop.Height = 10
+            Me.Controls.Add(MyTextBox)
+            MyTextBox.Dock = DockStyle.Top
+            Me.Controls.Add(PanelTop)
+            PanelTop.Dock = DockStyle.Top
+
             Me.ResumeLayout(False)
         Else
             Me.SuspendLayout()
@@ -890,6 +907,8 @@ Public Class Form1
             Me.WindowState = CurrentWindowState
             'Webbrowser entfernen
             Me.Controls.Remove(WebBrowser1)
+            Me.Controls.Remove(PanelTop)
+            Me.Controls.Remove(MyTextBox)
             'Menus wieder anzeigen
             MenuStrip1.Visible = True
             ToolStripContainer1.Visible = True
@@ -898,6 +917,9 @@ Public Class Form1
             'Die Form wiederherstellen
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
             'Das Webbrowser Control seinen alten Eigentümer zurückgeben
+            Me.SplitContainer1.Panel2.Controls.Add(Me.MyTextBox)
+            MyTextBox.Dock = DockStyle.Top
+            MyTextBox.BringToFront()
             Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
             WebBrowser1.Dock = DockStyle.Fill
             WebBrowser1.BringToFront()
@@ -912,6 +934,20 @@ Public Class Form1
 
 #End Region
 
+#Region "AboutBox"
 
+    ''' <summary>
+    ''' AboutBox
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub InfoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles InfoToolStripMenuItem.Click
+        Dim t As New AboutBox1
+        t.ShowDialog()
+    End Sub
 
+#End Region
+
+ 
 End Class

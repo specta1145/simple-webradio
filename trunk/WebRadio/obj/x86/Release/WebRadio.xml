@@ -149,13 +149,6 @@ WebRadio
  Generiert die settings.ini mit Voreinstellungen
  </summary>
 	<remarks></remarks>
-</member><member name="M:WebRadio.Form1.InfoToolStripMenuItem_Click(System.Object,System.EventArgs)">
-	<summary>
- AboutBox
- </summary>
-	<param name="sender"></param>
-	<param name="e"></param>
-	<remarks></remarks>
 </member><member name="M:WebRadio.Form1.ListView1_SelectedIndexChanged(System.Object,System.EventArgs)">
 	<summary>
  Wenn der Sender gewechselt wird
@@ -251,6 +244,13 @@ WebRadio
 </member><member name="M:WebRadio.Form1.CMSenderClick(System.Object,System.EventArgs)">
 	<summary>
  Wird aufgerufen, wenn ein Sender im Contextmenu des NotifyIcons angeklickt wird.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:WebRadio.Form1.InfoToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+ AboutBox
  </summary>
 	<param name="sender"></param>
 	<param name="e"></param>
