@@ -30,7 +30,6 @@ Partial Class Form1
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.TxtBoxURL = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.ListView2 = New System.Windows.Forms.ListView()
@@ -153,7 +152,6 @@ Partial Class Form1
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TxtBoxURL)
         Me.SplitContainer1.Size = New System.Drawing.Size(753, 342)
         Me.SplitContainer1.SplitterDistance = 216
         Me.SplitContainer1.TabIndex = 0
@@ -181,21 +179,13 @@ Partial Class Form1
         'WebBrowser1
         '
         Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 20)
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.Size = New System.Drawing.Size(533, 322)
+        Me.WebBrowser1.Size = New System.Drawing.Size(533, 342)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.Url = New System.Uri("http://www.google.de", System.UriKind.Absolute)
-        '
-        'TxtBoxURL
-        '
-        Me.TxtBoxURL.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtBoxURL.Location = New System.Drawing.Point(0, 0)
-        Me.TxtBoxURL.Name = "TxtBoxURL"
-        Me.TxtBoxURL.Size = New System.Drawing.Size(533, 20)
-        Me.TxtBoxURL.TabIndex = 1
         '
         'TabPage2
         '
@@ -731,7 +721,6 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
@@ -783,7 +772,6 @@ Partial Class Form1
     Friend WithEvents Lbl_current As System.Windows.Forms.Label
     Friend WithEvents Lbl_Volume As System.Windows.Forms.Label
     Friend WithEvents NotifyIcon_Webradio As System.Windows.Forms.NotifyIcon
-    Friend WithEvents TxtBoxURL As System.Windows.Forms.TextBox
     Friend WithEvents BTN_CLOSE As System.Windows.Forms.Button
     Friend WithEvents OFD As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Label1 As System.Windows.Forms.Label

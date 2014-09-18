@@ -63,6 +63,7 @@ Public Class Sender
             Next
         End If
         ls.Sort()
+        ini = Nothing
         Return ls
     End Function
 
@@ -82,6 +83,7 @@ Public Class Sender
             For Each s As Sender In sender
                 ini.WertSchreiben(s.Name, "url", s.URL)
             Next
+            ini = Nothing
         Catch ex As Exception
             MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
             Return False
@@ -92,6 +94,7 @@ Public Class Sender
     Public Shared Function RemoveSenderFromList(s As Sender, FileName As String) As Boolean
         Dim ini As New INIDatei(FileName)
         ini.SektionLöschen(s.Name)
+        ini = Nothing
         Return True
     End Function
 
