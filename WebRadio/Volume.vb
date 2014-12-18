@@ -79,8 +79,8 @@ Public Class Volume
     ''' </summary>
     ''' <param name="Vol">Irgend ein Wert, der aber kleiner der Trackbar.Maximum sein sollte.</param>
     ''' <remarks></remarks>
-    Public Sub SetVolume(Vol As Integer)
-        Dim NewVolume As Integer = CInt(((UShort.MaxValue / MaxValue) * Vol))
+    Private Sub SetVolume(Vol As Integer)
+        Dim NewVolume As Integer = CInt(((UShort.MaxValue / Me.MaxValue) * Vol))
         Dim NewVolumeAllChannels As UInteger = CUInt(((CUInt(NewVolume) And &HFFFF) Or (CUInt(NewVolume) << 16)))
         waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels)
     End Sub
