@@ -7,7 +7,7 @@ Public Class Form1
 
 #Region "Paniktaste"
 
-    Dim WithEvents Timer1 As New Timer With {.Enabled = True, .Interval = 10} 'Timer
+    Dim WithEvents Timer1 As New Timer ' With {.Enabled = True, .Interval = 10} 'Timer
     Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Integer) As Short 'Api declare
     Dim pressed As Short = -32767 'Api pressed Event
 
@@ -217,6 +217,7 @@ Public Class Form1
             CreateSettings()
         End If
 
+        'lädt auch die Property _SearchProperty
         LoadSettings()
 
         'aktuelle Lautstärke festlegen
@@ -225,6 +226,7 @@ Public Class Form1
         Vol.MaxValue = TrackBar1.Maximum
         TrackBar1.Value = Volume
         SetVolumeLabel()
+        Timer1.Stop()
 
     End Sub
 
@@ -426,7 +428,7 @@ Public Class Form1
             _SearchProperty = ListView1.SelectedItems.Item(0).Text
             GenerateCMNotifySender()
             'Sender suchen
-            Dim s As Sender = _sender.Find(AddressOf FindRadio)
+            Dim s = _sender.Find(AddressOf FindRadio)
             WebBrowser1.Navigate(s.URL)
         End If
     End Sub
